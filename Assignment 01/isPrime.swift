@@ -16,14 +16,15 @@ func isPrime(n: Int) -> Bool {
         return true
     }
     
-    for i in 2...n - 1 {
+    // Only need to check up to sqrt(n)
+    let sqrtN = Int(Double(n).squareRoot())
+    for i in 2...sqrtN {
         if n % i == 0 {
             return false
         }
     }
     
     return true
-
 }
 
 print(isPrime(n: 971)) // return true
